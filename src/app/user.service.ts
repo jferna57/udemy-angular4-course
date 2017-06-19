@@ -1,6 +1,14 @@
 export class UserService {
-    activeUsers = ['Max', 'Anna'];
-    inactiveUsers = ['Chris', 'Manu'];
+    private activeUsers = ['Max', 'Anna'];
+    private inactiveUsers = ['Chris', 'Manu'];
+
+    getActiveUsers() {
+        return this.activeUsers;
+    }
+
+    getInactiveUsers() {
+        return this.inactiveUsers;
+    }
 
     inactiveUser(id: number) {
         this.inactiveUsers.push(this.activeUsers[id]);
