@@ -4,8 +4,12 @@
     Welcome to {{title}}!!
   </h1>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  
-</ul>
 
+<button type="button" name="add" id="add" 
+  class="btn btn-primary btn-block" (click)='incrementTotal()'>Increment number</button>
+
+<h2>Via number</h2>
+<h3>Total is : {{ total }} </h3>
+
+<h2>Via Counter Model</h2>
+<h3>Total is : {{ counter.total }} </h3>
