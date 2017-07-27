@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import 'rxjs/Rx';
-import { Observable, Subscribable } from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
 import { Subscription } from 'rxjs/Subscription';
 
@@ -53,7 +53,5 @@ export class HomeComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.myIntervalObserver.unsubscribe();
     this.myCustomObserver.unsubscribe();
-
   }
-
 }
