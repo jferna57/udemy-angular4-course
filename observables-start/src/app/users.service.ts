@@ -4,4 +4,6 @@ export class UsersService {
 
     userActivated = new Subject();
 
+    userDesactivated = new Subject();
+
 }

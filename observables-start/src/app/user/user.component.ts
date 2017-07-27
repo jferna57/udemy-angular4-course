@@ -24,4 +24,8 @@ export class UserComponent implements OnInit {
     this.usersService.userActivated.next(this.id);
   }
 
+  onUserDesactivate() {
+    this.usersService.userDesactivated.next(this.id);
+  }
+
 }

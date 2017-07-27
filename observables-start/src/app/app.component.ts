@@ -23,5 +23,14 @@ export class AppComponent implements OnInit {
         }
       }
     );
+    this.usersService.userDesactivated.subscribe(
+      (id: number) => {
+        if (id === 1) {
+          this.user1Activated = false;
+        } else {
+          this.user2Activated = false;
+        }
+      }
+    );
   }
 }
