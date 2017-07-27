@@ -3,7 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import 'rxjs/Rx';
 import { Observable, Subscribable } from 'rxjs/Observable';
 import { Observer } from 'rxjs/Observer';
-import { ISubscription } from 'rxjs/Subscription';
+import { Subscription } from 'rxjs/Subscription';
 
 
 @Component({
@@ -13,8 +13,8 @@ import { ISubscription } from 'rxjs/Subscription';
 })
 export class HomeComponent implements OnInit, OnDestroy {
   
-  myIntervalObserver: ISubscription;
-  myCustomObserver: ISubscription;
+  myIntervalObserver: Subscription;
+  myCustomObserver: Subscription;
 
   constructor() { }
 
