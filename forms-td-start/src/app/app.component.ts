@@ -22,6 +22,7 @@ export class AppComponent {
   // }
 
   onSubmit() {
+    console.log('Is invalid: ' + this.myForm.invalid);
     console.log('username: ' + this.myForm.value['username']);
     console.log('email: ' + this.myForm.value['email']);
     console.log('secret: ' + this.myForm.value['secret']);
