@@ -11,6 +11,15 @@ export class AppComponent {
   defaultQuestion = 'teacher';
   answer = '';
   genders = ['female', 'male'];
+  user = {
+    username: '',
+    email: '',
+    secretQuestion: '',
+    answer: '',
+    gender: ''
+  };
+
+  submitted = false;
   
   // First approach: With this method you need to fill all the form data
   suggestDataMethod1() {
@@ -23,7 +32,7 @@ export class AppComponent {
         email: suggestedEmail,
       },
       secret: 'pet',
-      questionAnswer: '',
+      questionAnswer: 'nanu',
       gender: 'male'
     });
   }
@@ -31,7 +40,7 @@ export class AppComponent {
   // Second approach: With this method you can only fill some parts of the form  
   suggestDataMethod2() {
     const suggestedName = 'Superuser';
-    const suggestedEmail = 'Superuser@mail.com'
+    const suggestedEmail = 'Superuser@mail.com';
 
     this.myForm.form.patchValue({
       userData: {
@@ -40,8 +49,6 @@ export class AppComponent {
       }
     });
   }
-
-
 
   // onSubmit(form: NgForm) {
   //   console.log('username: ' + form.value['username']);
@@ -52,11 +59,22 @@ export class AppComponent {
   // }
 
   onSubmit() {
+    this.submitted = true;
     console.log('Is invalid: ' + this.myForm.invalid);
     console.log('username: ' + this.myForm.value['username']);
     console.log('email: ' + this.myForm.value['email']);
     console.log('secret: ' + this.myForm.value['secret']);
     
     console.log(this.myForm.form);
+    this.user.username = this.myForm.value.userData.username;
+    this.user.email = this.myForm.value.userData.email;
+    this.user.secretQuestion = this.myForm.value.secret;
+    this.user.answer = this.myForm.value.questionAnswer;
+    this.user.gender = this.myForm.value.gender;
+    
+  }
+
+  onReset() {
+    this.submitted = false;
   }
 }
