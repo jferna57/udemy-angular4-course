@@ -10,6 +10,7 @@ export class AppComponent {
   @ViewChild('form') myForm: NgForm;
   defaultQuestion = 'teacher';
   answer = '';
+  genders = ['female', 'male'];
 
   suggestUserName() {
     const suggestedName = 'Superuser';
@@ -28,5 +29,7 @@ export class AppComponent {
     console.log('username: ' + this.myForm.value['username']);
     console.log('email: ' + this.myForm.value['email']);
     console.log('secret: ' + this.myForm.value['secret']);
+    
+    console.log(this.myForm.form);
   }
 }
