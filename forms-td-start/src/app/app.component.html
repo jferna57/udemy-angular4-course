@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row"*ngIf="!submitted">
+  <div class="row" >
     <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
       <form (ngSubmit)="onSubmit()" #form="ngForm">
         <div 
@@ -76,10 +76,6 @@
       <p>Secret Question:  {{ user.secretQuestion }}</p>
       <p>Answer:  {{ user.answer }}</p>
       <p>Gender:  {{ user.gender }}</p>
-      <button 
-          class="btn btn-primary" 
-          type="submit"
-          (click)="onReset()">Reset</button>
     </div>
   </div>  
 </div>
