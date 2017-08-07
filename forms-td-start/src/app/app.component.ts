@@ -11,10 +11,37 @@ export class AppComponent {
   defaultQuestion = 'teacher';
   answer = '';
   genders = ['female', 'male'];
+  
+  // First approach: With this method you need to fill all the form data
+  suggestDataMethod1() {
+    const suggestedName = 'superuser';
+    const suggestedEmail = 'superuser@demo.com'
 
-  suggestUserName() {
-    const suggestedName = 'Superuser';
+    this.myForm.setValue({
+      userData: {
+        username: suggestedName,
+        email: suggestedEmail,
+      },
+      secret: 'pet',
+      questionAnswer: '',
+      gender: 'male'
+    });
   }
+
+  // Second approach: With this method you can only fill some parts of the form  
+  suggestDataMethod2() {
+    const suggestedName = 'Superuser';
+    const suggestedEmail = 'Superuser@mail.com'
+
+    this.myForm.form.patchValue({
+      userData: {
+        username: suggestedName,
+        email: suggestedEmail
+      }
+    });
+  }
+
+
 
   // onSubmit(form: NgForm) {
   //   console.log('username: ' + form.value['username']);
