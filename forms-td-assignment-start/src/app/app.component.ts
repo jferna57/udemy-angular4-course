@@ -19,7 +19,7 @@ export class AppComponent {
   };
 
   onSubmit(){
-    this.submitted =true;
+    this.submitted = true;
     console.log(this.myForm.form);
 
     this.data.email = this.myForm.value.email;
