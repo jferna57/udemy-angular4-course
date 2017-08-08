@@ -43,6 +43,7 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
     } else {
       this.addItem(shoppingForm);
     }
+    this.onClear();
   }
 
   updateItem(shoppingForm: NgForm) {
@@ -59,6 +60,16 @@ export class ShoppingEditComponent implements OnInit, OnDestroy {
     
     const newIngredient = new Ingredient(ingName, ingAmount);
     this.slService.addIngredient(newIngredient);
+  }
+
+  onClear() {
+    this.slForm.reset();
+    this.editMode = false;
+  }
+
+  onDelete() {
+    this.slService.deleteIngredient(this.editedItemIndex);
+    this.onClear();
   }
 
 }
