@@ -7,7 +7,7 @@ import { Observable } from 'rxjs/Observable';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
     
   projectForm: FormGroup;
   projectStatus = ['Stable', 'Critical', 'Finished'];
@@ -37,9 +37,9 @@ export class AppComponent implements OnInit{
   }
 
   forbiddenEmails(control: FormControl): Promise<any> | Observable<any> {
-    const promise = new Promise<any>((resolve,reject) => {
+    const promise = new Promise<any> ((resolve, reject) => {
       setTimeout(() => {
-        if(control.value === 'test@test.com') {
+        if (control.value === 'test@test.com') {
           resolve({'emailIsForbidden': true});
         } else {
           resolve (null);
