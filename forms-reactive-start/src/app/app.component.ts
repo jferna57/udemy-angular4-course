@@ -31,10 +31,27 @@ export class AppComponent implements OnInit {
         console.log(status);
       }
     );
+    // Set default values (in reactive approach)
+    this.signupForm.setValue({
+      'userData': {
+        'username': 'Max',
+        'email': 'max@mail.com'
+      },
+      'gender': 'male',
+      'hobbies': []
+    });
+
+    // Set some values (in reactive approach)
+    this.signupForm.patchValue({
+      'userData': {
+        'username': 'Ana'
+      }
+    });
   }
 
   onSubmit() {
     console.log(this.signupForm);
+    this.signupForm.reset();
   }
 
   onAddHobby() {
