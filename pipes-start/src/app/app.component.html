@@ -8,6 +8,8 @@
         class="btn button-primay" 
         (click)="onAddServer()">Add Server</button>
       <hr>
+      <br><br>
+      <h2>App Status: {{  appStatus | async }}</h2>
       <ul class="list-group">
         <li
           class="list-group-item"
