@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Response } from '@angular/http';
 import { ServerService } from './server.service';
 
 @Component({
@@ -20,7 +21,7 @@ export class AppComponent {
     }
   ];
 
-  constructor (private server: ServerService) {}
+  constructor (private serverService: ServerService) {}
 
   onAddServer(name: string) {
     this.servers.push({
@@ -30,9 +31,19 @@ export class AppComponent {
     });
   }
   onSave() {
-    this.server.storeServers(this.servers)
+    this.serverService.storeServers(this.servers)
       .subscribe(
         (response) => console.log(response),
+        (error) => console.log(error)
+      );
+  }
+  onGet() {
+    this.serverService.getServers()
+      .subscribe(
+        (response: Response) => {
+          const data = response.json();
+          console.log(data);
+        },
         (error) => console.log(error)
       );
   }
