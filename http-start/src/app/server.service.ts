@@ -10,7 +10,7 @@ export class ServerService {
             'Content-type': 'application/json'
         });
         return this.http.post(
-            'https://udemy-ng-http-34098.firebaseio.com/data.json', 
+            'https://udemy-ng-http-34098.firebaseio.com/data.json',
             servers,
             {headers: headers});
     }
