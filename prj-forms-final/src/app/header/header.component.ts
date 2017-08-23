@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RecipeService } from '../recipes/recipe.service';
 import { FirebaseService } from '../shared/firebase.service';
 import { Recipe } from '../recipes/recipe.model';
-import { Response} from '@angular/http'
+import { Response} from '@angular/http';
 
 @Component({
   selector: 'app-header',
