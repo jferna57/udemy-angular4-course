@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { RecipeService } from '../recipes/recipe.service';
-import { FirebaseService } from '../shared/firebase.service';
-import { Recipe } from '../recipes/recipe.model';
 import { Response} from '@angular/http';
+
+import { FirebaseService } from '../shared/firebase.service';
 
 @Component({
   selector: 'app-header',
@@ -10,8 +9,7 @@ import { Response} from '@angular/http';
 })
 export class HeaderComponent {
 
-  constructor(private firebaseService: FirebaseService, 
-              private recipeService: RecipeService) {}
+  constructor(private firebaseService: FirebaseService) {}
 
   onSaveData() {
     console.log('onSaveData');
