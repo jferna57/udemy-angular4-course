@@ -1,4 +1,5 @@
-import { NgModule } from '@angular/core';
+import { SignupComponent } from './auth/signup/signup.component';
+import { Component, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { RecipesComponent } from './recipes/recipes.component';
@@ -16,6 +17,7 @@ const appRoutes: Routes = [
     { path: ':id/edit', component: RecipeEditComponent },
   ] },
   { path: 'shopping-list', component: ShoppingListComponent },
+  { path: 'signup', component: SignupComponent },
 ];
 
 @NgModule({
