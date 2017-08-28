@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { RecipeService } from '../recipes/recipe.service';
 import { Http, Headers, Response } from '@angular/http';
+import 'rxjs/Rx';
+
 import { Recipe } from '../recipes/recipe.model';
 
 @Injectable()
@@ -17,9 +19,20 @@ export class FirebaseService {
 
     getRecipes() {
         this.http.get('https://my-ng-recipe-book.firebaseio.com/recipes.json')
-            .subscribe(
+            .map(
                 (response: Response) => {
                     const recipes: Recipe[] = response.json();
+                    for (const recipe of recipes) {
+                        if (!recipe['ingredients']) {
+                            recipe['ingredients'] = [];
+                        }
+                    }
+                    return recipes;
+                }
+            )
+            .subscribe(
+                (recipes: Recipe[]) => {
+                    
                     this.recipeServices.setRecipes(recipes);
                 }
             );
