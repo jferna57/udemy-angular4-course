@@ -20,4 +20,9 @@ export class HeaderComponent {
         }
       );
   }
+
+  onFetchData() {
+    console.log('onFetchData');
+    this.firebaseService.getRecipes();
+  }
 }
