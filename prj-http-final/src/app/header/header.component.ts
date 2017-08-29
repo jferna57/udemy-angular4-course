@@ -21,6 +21,10 @@ export class HeaderComponent {
       );
   }
 
+  onLogout() {
+    this.authService.signOut();
+  }
+
   onFetchData() {
     this.dataStorageService.getRecipes();
   }
